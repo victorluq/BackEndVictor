@@ -37,6 +37,7 @@ com\vu\backend\controller\Ceducation.class
 com\vu\backend\repository\RhabilidadesFront.class
 com\vu\backend\Security\Service\RolService.class
 com\vu\backend\repository\RhabilidadesBack.class
+.netbeans_automatic_build
 com\vu\backend\controller\ChabilidadesSoft.class
 com\vu\backend\service\Saboutme.class
 com\vu\backend\Security\Entity\UsuarioPrincipal.class
