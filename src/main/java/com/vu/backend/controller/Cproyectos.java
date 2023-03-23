@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("proyectos") //localhost:8080/proyectos
+@RequestMapping("/proyectos") //localhost:8080/proyectos
 @CrossOrigin(origins = "https://vlulproyecto.web.app/")
 public class Cproyectos {
     
