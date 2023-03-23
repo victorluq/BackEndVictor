@@ -25,19 +25,19 @@ public class Cexperiencia {
     @Autowired
     Sexperiencia expServ;
     
-    @GetMapping("/experiencia/lista")
+    @GetMapping("experiencia/lista")
     @ResponseBody
     public List<experiencia> verExperiencia(){
         return expServ.verExperiencia();
     }
     
-    @GetMapping("/experiencia/ver/{id}")
+    @GetMapping("experiencia/ver/{id}")
     @ResponseBody
     public experiencia verExperiencia(@PathVariable int id){
         return expServ.buscarExperiencia(id);
     }
 
-    @PostMapping("/experiencia/crear")
+    @PostMapping("experiencia/crear")
     /* El "String" es porque va a retornar un String, en caso que
     no retorne nada se pone "void" */
     public String agregarExperiencia (@RequestBody experiencia exp){
@@ -45,13 +45,13 @@ public class Cexperiencia {
         return "La experiencia fue creada correctamente";
     }
     
-    @DeleteMapping("/experiencia/borrar/{id}")
+    @DeleteMapping("experiencia/borrar/{id}")
     public String eliminarExperiencia(@PathVariable int id){
         expServ.borrarExperiencia(id);
         return "La experiencia se ha borrado correctamente";
     }
 
-    @PutMapping("/experiencia/editar")
+    @PutMapping("experiencia/editar")
     public String editarExperiencia(@RequestBody experiencia exp){
         expServ.editarExperiencia(exp);
         return "La experiencia fue editada correctamente";
