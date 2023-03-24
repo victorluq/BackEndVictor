@@ -12,32 +12,33 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 
 
 @RestController
-//@RequestMapping("/experiencia") //localhost:8080/experiencia
+@RequestMapping("experiencia") //localhost:8080/experiencia
 @CrossOrigin(origins = "https://vlulproyecto.web.app/")
 public class Cexperiencia {
     
     @Autowired
     Sexperiencia expServ;
     
-    @GetMapping("experiencia/lista")
+    @GetMapping("/lista")
     @ResponseBody
     public List<experiencia> verExperiencia(){
         return expServ.verExperiencia();
     }
     
-    @GetMapping("experiencia/ver/{id}")
+    @GetMapping("/ver/{id}")
     @ResponseBody
     public experiencia verExperiencia(@PathVariable int id){
         return expServ.buscarExperiencia(id);
     }
 
-    @PostMapping("experiencia/crear")
+    @PostMapping("/crear")
     /* El "String" es porque va a retornar un String, en caso que
     no retorne nada se pone "void" */
     public String agregarExperiencia (@RequestBody experiencia exp){
@@ -45,13 +46,13 @@ public class Cexperiencia {
         return "La experiencia fue creada correctamente";
     }
     
-    @DeleteMapping("experiencia/borrar/{id}")
+    @DeleteMapping("/borrar/{id}")
     public String eliminarExperiencia(@PathVariable int id){
         expServ.borrarExperiencia(id);
         return "La experiencia se ha borrado correctamente";
     }
 
-    @PutMapping("experiencia/editar")
+    @PutMapping("/editar")
     public String editarExperiencia(@RequestBody experiencia exp){
         expServ.editarExperiencia(exp);
         return "La experiencia fue editada correctamente";
